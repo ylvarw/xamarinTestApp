@@ -13,6 +13,7 @@ namespace XamarinTestApp
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute(nameof(Notes.Views.CpuEntryPage), typeof(Notes.Views.CpuEntryPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

@@ -1,21 +1,14 @@
 ﻿using System;
 using System.IO;
-using XamarinTestApp.Models;
 using Xamarin.Forms;
+using XamarinTestApp.Models;
 
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms.Xaml;
-using XamarinTestApp.ViewModels;
-using XamarinTestApp.Views;
+
 
 namespace XamarinTestApp.Views
 {
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
-    public partial class CpuEntryyPage : ContentPage
+    public partial class CpuEntryPage : ContentPage
     {
         public string ItemId
         {
@@ -25,11 +18,11 @@ namespace XamarinTestApp.Views
             }
         }
 
-        public CpuEntryyPage()
+        public CpuEntryPage()
         {
-            object p = InitializeComponent();
+            InitializeComponent();
 
-            // Set the BindingContext of the page to a new CpuTest.
+            // Set the BindingContext of the page to a new Note.
             BindingContext = new CpuTest();
         }
 

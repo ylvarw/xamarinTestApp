@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
-using XamarinTestApp.ViewModels;
 using XamarinTestApp.Views;
 
 namespace XamarinTestApp
@@ -13,7 +11,9 @@ namespace XamarinTestApp
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
-            Routing.RegisterRoute(nameof(Notes.Views.CpuEntryPage), typeof(Notes.Views.CpuEntryPage));
+            Routing.RegisterRoute(nameof(XamarinTestApp.Views.CpuEntryPage), typeof(XamarinTestApp.Views.CpuEntryPage));
+            Routing.RegisterRoute(nameof(XamarinTestApp.Views.GpuEntryPage), typeof(XamarinTestApp.Views.GpuEntryPage));
+
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

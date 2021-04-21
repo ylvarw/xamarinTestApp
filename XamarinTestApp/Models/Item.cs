@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace XamarinTestApp.Models
+﻿namespace XamarinTestApp.Models
 {
     public class Item
     {

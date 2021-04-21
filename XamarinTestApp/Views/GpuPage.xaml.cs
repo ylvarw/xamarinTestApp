@@ -11,9 +11,9 @@ using XamarinTestApp.Models;
 namespace XamarinTestApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CpuPage : ContentPage
+    public partial class GpuPage : ContentPage
     {
-        public CpuPage()
+        public GpuPage()
         {
             InitializeComponent();
         }
@@ -22,13 +22,13 @@ namespace XamarinTestApp.Views
         {
             base.OnAppearing();
 
-            var CpuTests = new List<CpuTest>();
+            var GpuTests = new List<GpuTest>();
 
-            // Create a CpuTest object from each file.
-            var files = Directory.EnumerateFiles(App.FolderPath, "*.CpuTests.txt");
+            // Create a GpuTest object from each file.
+            var files = Directory.EnumerateFiles(App.FolderPath, "*.GpuTests.txt");
             foreach (var filename in files)
             {
-                CpuTests.Add(new CpuTest
+                GpuTests.Add(new GpuTest
                 {
                     Filename = filename,
                     Text = File.ReadAllText(filename),
@@ -37,25 +37,25 @@ namespace XamarinTestApp.Views
             }
 
             // Set the data source for the CollectionView to a
-            // sorted collection of CpuTests.
-            collectionView.ItemsSource = CpuTests
+            // sorted collection of GpuTests.
+            collectionView.ItemsSource = GpuTests
                 .OrderBy(d => d.Date)
                 .ToList();
         }
 
         async void OnAddClicked(object sender, EventArgs e)
         {
-            // Navigate to the CpuTestEntryPage, without passing any data.
-            await Shell.Current.GoToAsync(nameof(CpuEntryPage));
+            // Navigate to the GpuTestEntryPage, without passing any data.
+            await Shell.Current.GoToAsync(nameof(GpuEntryPage));
         }
 
         async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.CurrentSelection != null)
             {
-                // Navigate to the CpuTestEntryPage, passing the filename as a query parameter.
-                CpuTest CpuTest = (CpuTest)e.CurrentSelection.FirstOrDefault();
-                await Shell.Current.GoToAsync($"{nameof(CpuEntryPage)}?{nameof(CpuEntryPage.ItemId)}={CpuTest.Filename}");
+                // Navigate to the GpuTestEntryPage, passing the filename as a query parameter.
+                GpuTest GpuTest = (GpuTest)e.CurrentSelection.FirstOrDefault();
+                await Shell.Current.GoToAsync($"{nameof(GpuEntryPage)}?{nameof(GpuEntryPage.ItemId)}={GpuTest.Filename}");
             }
         }
     }

@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using XamarinTestApp.Models;
+﻿using Xamarin.Forms;
 using XamarinTestApp.ViewModels;
-using XamarinTestApp.Views;
 
 namespace XamarinTestApp.Views
 {

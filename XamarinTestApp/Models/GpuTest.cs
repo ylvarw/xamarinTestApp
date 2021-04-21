@@ -3,7 +3,7 @@
 
 namespace XamarinTestApp.Models
 {
-    class CpuTest
+    class GpuTest
     {
         public string Filename { get; set; }
         public string Text { get; set; }

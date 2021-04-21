@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\GpuEntryPage .xaml.cs" />
     <Compile Remove="Views\Page1.xaml.cs" />
   </ItemGroup>
 
@@ -22,6 +23,12 @@
     <Compile Update="Views\CpuEntryPage.xaml.cs">
       <DependentUpon>CpuEntryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\GpuPage.xaml.cs">
+      <DependentUpon>GpuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\GpuEntryPage.xaml.cs">
+      <DependentUpon>GpuEntryPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +36,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\CpuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\GpuEntryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

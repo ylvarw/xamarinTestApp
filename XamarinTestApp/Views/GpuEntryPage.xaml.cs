@@ -8,57 +8,57 @@ using XamarinTestApp.Models;
 namespace XamarinTestApp.Views
 {
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
-    public partial class CpuEntryPage : ContentPage
+    public partial class GpuEntryPage : ContentPage
     {
         public string ItemId
         {
             set
             {
-                LoadCpuTest(value);
+                LoadGpuTest(value);
             }
         }
 
-        public CpuEntryPage()
+        public GpuEntryPage()
         {
             InitializeComponent();
 
             // Set the BindingContext of the page to a new Note.
-            BindingContext = new CpuTest();
+            BindingContext = new GpuTest();
         }
 
-        void LoadCpuTest(string filename)
+        void LoadGpuTest(string filename)
         {
             try
             {
-                // Retrieve the CpuTest and set it as the BindingContext of the page.
-                CpuTest CpuTest = new CpuTest
+                // Retrieve the GpuTest and set it as the BindingContext of the page.
+                GpuTest GpuTest = new GpuTest
                 {
                     Filename = filename,
                     Text = File.ReadAllText(filename),
                     Date = File.GetCreationTime(filename)
                 };
-                BindingContext = CpuTest;
+                BindingContext = GpuTest;
             }
             catch (Exception)
             {
-                Console.WriteLine("Failed to load CpuTest.");
+                Console.WriteLine("Failed to load GpuTest.");
             }
         }
 
         async void OnSaveButtonClicked(object sender, EventArgs e)
         {
-            var CpuTest = (CpuTest)BindingContext;
+            var GpuTest = (GpuTest)BindingContext;
 
-            if (string.IsNullOrWhiteSpace(CpuTest.Filename))
+            if (string.IsNullOrWhiteSpace(GpuTest.Filename))
             {
                 // Save the file.
-                var filename = Path.Combine(App.FolderPath, $"{Path.GetRandomFileName()}.CpuTests.txt");
-                File.WriteAllText(filename, CpuTest.Text);
+                var filename = Path.Combine(App.FolderPath, $"{Path.GetRandomFileName()}.GpuTests.txt");
+                File.WriteAllText(filename, GpuTest.Text);
             }
             else
             {
                 // Update the file.
-                File.WriteAllText(CpuTest.Filename, CpuTest.Text);
+                File.WriteAllText(GpuTest.Filename, GpuTest.Text);
             }
 
             // Navigate backwards
@@ -67,12 +67,12 @@ namespace XamarinTestApp.Views
 
         async void OnDeleteButtonClicked(object sender, EventArgs e)
         {
-            var CpuTest = (CpuTest)BindingContext;
+            var GpuTest = (GpuTest)BindingContext;
 
             // Delete the file.
-            if (File.Exists(CpuTest.Filename))
+            if (File.Exists(GpuTest.Filename))
             {
-                File.Delete(CpuTest.Filename);
+                File.Delete(GpuTest.Filename);
             }
 
             // Navigate backwards

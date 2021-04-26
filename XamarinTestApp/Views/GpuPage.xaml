@@ -3,34 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinTestApp.Views.GpuPage"
              Title="GPU">
-    <!-- declaratively defines the user interface for the page -->
 
-    <!-- Add an item to the toolbar -->
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add"
-                     Clicked="OnAddClicked" />
-    </ContentPage.ToolbarItems>
+    <!--  display prime-numbers here -->
 
-    <!-- Display notes in a list, display prime-numbers here? -->
-    <CollectionView x:Name="collectionView"
-                    Margin="20"
-                    SelectionMode="Single"
-                    SelectionChanged="OnSelectionChanged">
-        <CollectionView.ItemsLayout>
-            <LinearItemsLayout Orientation="Vertical"
-                               ItemSpacing="10" />
-        </CollectionView.ItemsLayout>
-        <!-- Define the appearance of each item in the list -->
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <StackLayout>
-                    <Label Text="{Binding Text}"
-                           FontSize="Medium"/>
-                    <Label Text="{Binding Date}"
-                           TextColor="Plum"
-                           FontSize="Small" />
-                </StackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <StackLayout>
+        <Label x:Name="label"
+            Text="Click the Button below"
+            FontSize="Large"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center" />
+        <Button Text="Click to do something!"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center"
+            Clicked="OnButtonClicked" />
+    </StackLayout>
+     
 </ContentPage>

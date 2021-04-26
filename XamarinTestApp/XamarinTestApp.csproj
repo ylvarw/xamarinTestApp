@@ -26,9 +26,6 @@
     <Compile Update="Views\GpuPage.xaml.cs">
       <DependentUpon>GpuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\GpuEntryPage.xaml.cs">
-      <DependentUpon>GpuEntryPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\RenderEntryPage.xaml.cs">
       <DependentUpon>RenderEntryPage.xaml</DependentUpon>
     </Compile>
@@ -39,9 +36,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\CpuPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\GpuEntryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RenderEntryPage.xaml">

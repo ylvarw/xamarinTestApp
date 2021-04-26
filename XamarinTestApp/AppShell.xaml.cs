@@ -9,7 +9,6 @@ namespace XamarinTestApp
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(XamarinTestApp.Views.CpuEntryPage), typeof(XamarinTestApp.Views.CpuEntryPage));
             Routing.RegisterRoute(nameof(XamarinTestApp.Views.GpuEntryPage), typeof(XamarinTestApp.Views.GpuEntryPage));
             Routing.RegisterRoute(nameof(XamarinTestApp.Views.RenderEntryPage), typeof(XamarinTestApp.Views.RenderEntryPage));
 

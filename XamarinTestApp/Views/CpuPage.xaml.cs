@@ -22,41 +22,37 @@ namespace XamarinTestApp.Views
         {
             base.OnAppearing();
 
-            var CpuTests = new List<CpuTest>();
 
-            // Create a CpuTest object from each file.
-            var files = Directory.EnumerateFiles(App.FolderPath, "*.CpuTests.txt");
-            foreach (var filename in files)
+        }
+
+        void OnButtonClicked(object sender, EventArgs args)
+        {
+            FindPrimeNumber(100000000);
+        }
+        public long FindPrimeNumber(int n)
+        {
+            int count = 0;
+            long a = 2;
+            while (count < n)
             {
-                CpuTests.Add(new CpuTest
+                long b = 2;
+                int prime = 1;// to check if found a prime
+                while (b * b <= a)
                 {
-                    Filename = filename,
-                    Text = File.ReadAllText(filename),
-                    Date = File.GetCreationTime(filename)
-                });
+                    if (a % b == 0)
+                    {
+                        prime = 0;
+                        break;
+                    }
+                    b++;
+                }
+                if (prime > 0)
+                {
+                    count++;
+                }
+                a++;
             }
-
-            // Set the data source for the CollectionView to a
-            // sorted collection of CpuTests.
-            collectionView.ItemsSource = CpuTests
-                .OrderBy(d => d.Date)
-                .ToList();
-        }
-
-        async void OnAddClicked(object sender, EventArgs e)
-        {
-            // Navigate to the CpuTestEntryPage, without passing any data.
-            await Shell.Current.GoToAsync(nameof(CpuEntryPage));
-        }
-
-        async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (e.CurrentSelection != null)
-            {
-                // Navigate to the CpuTestEntryPage, passing the filename as a query parameter.
-                CpuTest CpuTest = (CpuTest)e.CurrentSelection.FirstOrDefault();
-                await Shell.Current.GoToAsync($"{nameof(CpuEntryPage)}?{nameof(CpuEntryPage.ItemId)}={CpuTest.Filename}");
-            }
+            return (--a);
         }
     }
 }

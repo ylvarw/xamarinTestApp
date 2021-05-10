@@ -25,10 +25,25 @@ namespace XamarinTestApp.Views
 
         }
 
-        void OnButtonClicked(object sender, EventArgs args)
+        void OnButtonClickedfirst(object sender, EventArgs args)
         {
-            FindPrimeNumber(100000000);
+            FindPrimeNumber(10000);
         }
+
+        void OnButtonClickedsecond(object sender, EventArgs args)
+        {
+            FindPrimeNumber(50000);
+        }
+
+        void OnButtonClickedthird(object sender, EventArgs args)
+        {
+            FindPrimeNumber(100000);
+        }
+        void OnButtonClickedfourth(object sender, EventArgs args)
+        {
+            FindPrimeNumber(150000);
+        }
+
         public long FindPrimeNumber(int n)
         {
             int count = 0;

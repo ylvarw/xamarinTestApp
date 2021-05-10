@@ -18,10 +18,22 @@
                HorizontalOptions="Center"
                TextColor="black"/>
 
-        <Button Text="test CPU"
+        <Button Text="test 10000"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
-                Clicked="OnButtonClicked" />
+                Clicked="OnButtonClickedfirst" />
+        <Button Text="test 50000"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="OnButtonClickedsecond" />
+        <Button Text="test 100000"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="OnButtonClickedthird" />
+        <Button Text="test 150000"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="OnButtonClickedfourth" />
 
     </StackLayout>
     <!-- Display notes in a list, display prime-numbers here? -->
